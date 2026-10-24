@@ -23,6 +23,12 @@ jobs:
       with:
         channel: 'stable'
 
+    - name: Generate Android scaffolding
+      run: |
+        if [ ! -d "android" ]; then
+          flutter create . --platforms=android --project-name=emi_lab_app
+        fi
+
     - name: Install dependencies
       run: flutter pub get
 
